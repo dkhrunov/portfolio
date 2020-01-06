@@ -1,0 +1,15 @@
+{
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "Technical зortfolio Denis Khrunov",
+	"main": "main.js",
+	"scripts": {
+		"start": "node main.js"
+	},
+	"author": "Denis Khrunov",
+	"license": "ISC",
+	"devDependencies": {},
+	"dependencies": {
+    	"express": "^4.17.1"
+  	}
+}
