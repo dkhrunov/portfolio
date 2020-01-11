@@ -4,7 +4,7 @@
 	"description": "Technical зortfolio Denis Khrunov",
 	"main": "main.js",
 	"scripts": {
-		"start-server": "node main.js",
+		"start": "node main.js",
 		"start-sass": "sass --watch sass/:css/"
 	},
 	"author": "Denis Khrunov",
