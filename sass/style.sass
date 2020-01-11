@@ -12,7 +12,7 @@ $large-devices: 900px
 $extra-large-devices: 1112px
 
 // Color var
-$colorfull-elem: #3971ff
+$blue-elem: #3971ff
 $light-grey: #f3f3f3
 $white: #ffffff
 $header: #333333
@@ -23,7 +23,7 @@ $borrow: #bd8660
 
 
 // Inheritance of Header of content block
-%heading
+%Heading
 	display: flex
 	flex-direction: column
 	width: 100%
@@ -60,6 +60,26 @@ $borrow: #bd8660
 
 // For Mobile devices
 @media screen and (min-width: $small-devices ), (max-width: $small-devices )
+
+	.cards-row
+		flex-direction: column
+
+	.card
+			width: 100%
+
+			.number
+				font-size: 20px
+
+			h1
+				font-size: 15px
+				margin: 0
+
+			h2
+				font-size: 10px
+
+			p
+				display: none
+
 	.leftmenu
 		display: none
 
@@ -91,27 +111,18 @@ $borrow: #bd8660
 		.education-blocks
 			justify-content: center
 
-		.education-blocks__row
-			flex-direction: column
+	.experience
+		width: 100vw
 
-		.education-blocks__item
-			width: 100%
-
-			.number
-				font-size: 20px
-
-			h1
-				font-size: 15px
-				margin: 0
-
-			h2
-				font-size: 10px
-
-			p
-				display: none
+		.experience-blocks
+			justify-content: center
 
 // For Tablets devices
 @media screen and (min-width: $medium-devices)
+
+	.cards-row
+		flex-direction: row
+
 	.skill
 
 		.row
@@ -128,11 +139,31 @@ $borrow: #bd8660
 		.education-blocks
 			justify-content: space-around
 
-		.education-blocks__row
-			flex-direction: row
+	.experience
+
+		.experience-blocks
+			justify-content: space-around
 
 // For Normal Desctop devices
 @media screen and (min-width: $large-devices)
+
+	.cards-row
+		flex-direction: row
+
+	.card
+
+			.number
+				font-size: 40px
+
+			h1
+				font-size: 24px
+
+			h2
+				font-size: 16px
+
+			p
+				display: flex
+
 	.slider
 		height: 80vh
 
@@ -165,25 +196,20 @@ $borrow: #bd8660
 		.education-blocks
 			justify-content: space-around
 
-		.education-blocks__row
-			flex-direction: row
+	.experience
 
-		.education-blocks__item
-
-			.number
-				font-size: 40px
-
-			h1
-				font-size: 24px
-
-			h2
-				font-size: 16px
-
-			p
-				display: flex
+		.experience-blocks
+			justify-content: space-around
 
 // For Wide Desctop devices
 @media screen and (min-width: $extra-large-devices)
+
+	.cards-row
+		flex-direction: row
+
+	.card
+		width: initial
+
 	.leftmenu
 		display: block
 
@@ -225,11 +251,12 @@ $borrow: #bd8660
 		.education-blocks
 			justify-content: space-around
 
-		.education-blocks__row			
-			flex-direction: row
+	.experience
+		width: calc(100vw - 214px)
+		margin-left: 214px
 
-			.education-blocks__item
-				width: initial
+		.experience-blocks
+			justify-content: space-around
 
 
 
@@ -257,11 +284,11 @@ body
 	height: calc(100% - 40px)
 
 	.heading
-		@extend %heading
+		@extend %Heading
 		color: $header
 
 	.heading-alt
-		@extend %heading
+		@extend %Heading
 		color: $light-grey
 
 .shadow-background
@@ -294,6 +321,60 @@ body
 		left: -1.8px
 		top: 4.5px
 
+.cards-row
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: space-around
+
+.card
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	font-family: 'Roboto'
+
+	.card__text
+		width: 100%
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: space-around
+
+	.number
+		color: $borrow
+		width: 20%
+		font-weight: 400
+		line-height: 30px
+		text-transform: uppercase
+
+	h1
+		color: $borrow
+		width: 80%
+		font-weight: 400
+		line-height: 30px
+		letter-spacing: 0.3px
+		word-spacing: 0.2px
+		text-transform: uppercase
+		text-align: left
+
+	h2
+		width: 80%
+		font-weight: 400
+		line-height: 30px
+		text-transform: uppercase
+		letter-spacing: 0.3px
+		word-spacing: 0px
+		text-align: left
+
+	p
+		width: 437px
+		font-size: 16px
+		font-weight: 400
+		line-height: 30px
+		letter-spacing: 0.1px
+		word-spacing: 0px
+
 
 
 // левое меню
@@ -322,7 +403,7 @@ body
 
 	.work
 		margin-top: 10.4px
-		color: $colorfull-elem
+		color: $blue-elem
 		font-family: 'Roboto'
 		font-size: 12px
 		font-weight: 300
@@ -417,7 +498,7 @@ body
 			margin-bottom: 0
 
 		span
-			color: $colorfull-elem
+			color: $blue-elem
 			letter-spacing: 0px
 
 
@@ -446,7 +527,7 @@ body
 			display: inline-block
 
 	a, a:active, a:visited
-		color: $colorfull-elem
+		color: $blue-elem
 
 	.scroll-down
 		align-self: flex-end
@@ -509,191 +590,24 @@ body
 		display: flex
 		flex-direction: column
 		align-items: center
-
-		.education-blocks__row
-			width: 100%
-			display: flex
-			align-items: center
-			justify-content: space-around
-
-		.education-blocks__item
-			display: flex
-			flex-direction: column
-			justify-content: center
-			align-items: center
-			font-family: 'Roboto'
-			color: $light-grey
-
-			.item__row
-				width: 100%
-				display: flex
-				flex-direction: row
-				align-items: center
-				justify-content: space-around
-
-			.number
-				color: $borrow
-				width: 20%
-				font-weight: 400
-				line-height: 30px
-				text-transform: uppercase
-
-			h1
-				color: $borrow
-				width: 80%
-				font-weight: 400
-				line-height: 30px
-				letter-spacing: 0.3px
-				word-spacing: 0.2px
-				text-transform: uppercase
-				text-align: left
-
-			h2
-				width: 80%
-				font-weight: 400
-				line-height: 30px
-				text-transform: uppercase
-				letter-spacing: 0.3px
-				word-spacing: 0px
-				text-align: left
-
-			p
-				width: 437px
-				font-size: 16px
-				font-weight: 400
-				line-height: 30px
-				letter-spacing: 0.1px
-				word-spacing: 0px
-
-	.education-blocks__item:hover .number
-		color: $borrow
-		+transition(0.5s)
-
-	.education-blocks__item:hover h1
-		color: $borrow
-		+transition(0.5s)
+		color: $light-grey
 
 
 // experience
 .experience
-	width: 1135px
-	height: 807px
-	background-color: $white
-	margin-left: 215px
-	position: relative
+	height: 100vh
 
-.content4
-	height: 807px
-	width: 950px
-	margin: 0 auto
-	position: relative
-
-	.heading
-		position: absolute
-		width: 160px
-		height: 51px
-		color: $header
-		font-family: 'Exo 2'
-		font-size: 30px
-		font-weight: 600
-		line-height: 30px
-		text-transform: uppercase
-		margin: 
-			top: 95px
-			left: 2px
-		letter-spacing: 0.2px
-		word-spacing: 1.2px
-
-	h1
-		position: absolute
-		display: inline-block
-		margin: 0
-			top: 2px
-			left: 61px
-		width: 265px
-		height: 26px
+	.experience-blocks
+		width: 100%
+		height: calc(100% - 51px - 40px)
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
 		color: $tetx-color
-		font-family: 'Roboto'
-		font-size: 24px
-		font-weight: 400
-		line-height: 30px
-		letter-spacing: 0.3px
-		word-spacing: 0.2px
-		text-transform: uppercase
 
-	h2
-		position: absolute
-		width: 265px
-		height: 42px
-		color: $tetx-color
-		font-family: 'Roboto'
-		font-size: 16px
-		font-weight: 400
-		line-height: 30px
-		text-transform: uppercase
-		letter-spacing: 0.3px
-		word-spacing: 0px
-		margin: 0 
-			top: 41px
-			left: 61px
-
-	p
-		position: absolute
-		width: 437px
-		height: 47px
-		color: $tetx-color
-		font-family: 'Roboto'
-		font-size: 16px
-		font-weight: 400
-		line-height: 30px
-		letter-spacing: 0px
-		word-spacing: 0.5px
-		margin: 0
-			top: 133px
-
-	.exp1:hover #num, .exp2:hover #num, .exp3:hover #num, .exp4:hover #num
-		color: $colorfull-elem
-		+transition(1s)
-	.exp1:hover h1, .exp2:hover h1, .exp3:hover h1, .exp4:hover h1
-		color: $colorfull-elem
-		+transition(1s)
-
-
-	.exp1
-		position: absolute
-		width: 438px
-		height: 179px
-		margin: 
-			top: 243px
-			left: 2px
-
-	.exp2
-		position: absolute
-		width: 438px
-		height: 179px
-		margin: 
-			top: 243px
-			left: 477px
-
-	.exp3
-		position: absolute
-		width: 438px
-		height: 179px
-		margin: 
-			top: 521px
-			left: 2px
-
-	.exp4
-		position: absolute
-		width: 438px
-		height: 179px
-		margin: 
-			top: 521px
-			left: 477px	
-
-
+	
 //portfolio
-
 .portfolio
 	width: 1135px
 	height: 1333px
@@ -877,7 +791,7 @@ body
 					right: 45.5px
 
 			li:nth-child(3)
-				color: $colorfull-elem
+				color: $blue-elem
 
 		#right_btm
 			position: absolute
@@ -888,7 +802,7 @@ body
 			cursor: pointer
 
 		span:hover
-			color: $colorfull-elem
+			color: $blue-elem
 			+transition(1s)
 
 	.pscard
@@ -970,7 +884,7 @@ body
 		position: absolute
 
 	p:hover
-		color: $colorfull-elem
+		color: $blue-elem
 		+transition(1s)
 		cursor: pointer
 
@@ -1025,7 +939,7 @@ body
 		letter-spacing: 0.25px
 		
 		span
-			color: $colorfull-elem
+			color: $blue-elem
 			font-weight: 900
 			margin:
 				left: -1px
@@ -1085,7 +999,7 @@ body
 		position: absolute
 		width: 97px
 		height: 50px
-		color: $colorfull-elem
+		color: $blue-elem
 		font-family: 'Roboto'
 		font-size: 16px
 		font-weight: 500
@@ -1220,7 +1134,7 @@ body
 		word-spacing: 1px
 
 		span
-			color: $colorfull-elem
+			color: $blue-elem
 
 	h3
 		text-align: center
@@ -1371,7 +1285,7 @@ body
 			
 
 		a:hover
-			color: $colorfull-elem
+			color: $blue-elem
 			+transition(1s)
 
 	form
@@ -1430,7 +1344,7 @@ body
 				top: 304px
 
 		#txt:focus, #email:focus, #name:focus, #intrsd:focus
-			border-color: $colorfull-elem
+			border-color: $blue-elem
 			color: $tetx-color
 			+transition(1s)
 
@@ -1453,5 +1367,5 @@ body
 
 		#submit:hover
 			cursor: pointer
-			color: $colorfull-elem
+			color: $blue-elem
 			+transition(1s)
