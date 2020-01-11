@@ -27,6 +27,27 @@
   }
 }
 @media screen and (min-width: 576px), (max-width: 576px) {
+  .cards-row {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+  .card .number {
+    font-size: 20px;
+  }
+  .card h1 {
+    font-size: 15px;
+    margin: 0;
+  }
+  .card h2 {
+    font-size: 10px;
+  }
+  .card p {
+    display: none;
+  }
+
   .leftmenu {
     display: none;
   }
@@ -59,27 +80,19 @@
   .education .education-blocks {
     justify-content: center;
   }
-  .education .education-blocks__row {
-    flex-direction: column;
+
+  .experience {
+    width: 100vw;
   }
-  .education .education-blocks__item {
-    width: 100%;
-  }
-  .education .education-blocks__item .number {
-    font-size: 20px;
-  }
-  .education .education-blocks__item h1 {
-    font-size: 15px;
-    margin: 0;
-  }
-  .education .education-blocks__item h2 {
-    font-size: 10px;
-  }
-  .education .education-blocks__item p {
-    display: none;
+  .experience .experience-blocks {
+    justify-content: center;
   }
 }
 @media screen and (min-width: 768px) {
+  .cards-row {
+    flex-direction: row;
+  }
+
   .skill .row {
     display: flex;
     flex-direction: row;
@@ -93,11 +106,29 @@
   .education .education-blocks {
     justify-content: space-around;
   }
-  .education .education-blocks__row {
-    flex-direction: row;
+
+  .experience .experience-blocks {
+    justify-content: space-around;
   }
 }
 @media screen and (min-width: 900px) {
+  .cards-row {
+    flex-direction: row;
+  }
+
+  .card .number {
+    font-size: 40px;
+  }
+  .card h1 {
+    font-size: 24px;
+  }
+  .card h2 {
+    font-size: 16px;
+  }
+  .card p {
+    display: flex;
+  }
+
   .slider {
     height: 80vh;
   }
@@ -128,23 +159,20 @@
   .education .education-blocks {
     justify-content: space-around;
   }
-  .education .education-blocks__row {
-    flex-direction: row;
-  }
-  .education .education-blocks__item .number {
-    font-size: 40px;
-  }
-  .education .education-blocks__item h1 {
-    font-size: 24px;
-  }
-  .education .education-blocks__item h2 {
-    font-size: 16px;
-  }
-  .education .education-blocks__item p {
-    display: flex;
+
+  .experience .experience-blocks {
+    justify-content: space-around;
   }
 }
 @media screen and (min-width: 1112px) {
+  .cards-row {
+    flex-direction: row;
+  }
+
+  .card {
+    width: initial;
+  }
+
   .leftmenu {
     display: block;
   }
@@ -189,11 +217,13 @@
   .education .education-blocks {
     justify-content: space-around;
   }
-  .education .education-blocks__row {
-    flex-direction: row;
+
+  .experience {
+    width: calc(100vw - 214px);
+    margin-left: 214px;
   }
-  .education .education-blocks__row .education-blocks__item {
-    width: initial;
+  .experience .experience-blocks {
+    justify-content: space-around;
   }
 }
 body {
@@ -243,6 +273,62 @@ body {
   text-transform: uppercase;
   margin-left: -1.8px;
   margin-top: 4.5px;
+}
+
+.cards-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+}
+.card .card__text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.card .number {
+  color: #bd8660;
+  width: 20%;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.card h1 {
+  color: #bd8660;
+  width: 80%;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  word-spacing: 0.2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.card h2 {
+  width: 80%;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  word-spacing: 0px;
+  text-align: left;
+}
+.card p {
+  width: 437px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.1px;
+  word-spacing: 0px;
 }
 
 .leftmenu {
@@ -466,194 +552,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.education .education-blocks .education-blocks__row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.education .education-blocks .education-blocks__item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto";
   color: #f3f3f3;
-}
-.education .education-blocks .education-blocks__item .item__row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.education .education-blocks .education-blocks__item .number {
-  color: #bd8660;
-  width: 20%;
-  font-weight: 400;
-  line-height: 30px;
-  text-transform: uppercase;
-}
-.education .education-blocks .education-blocks__item h1 {
-  color: #bd8660;
-  width: 80%;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.3px;
-  word-spacing: 0.2px;
-  text-transform: uppercase;
-  text-align: left;
-}
-.education .education-blocks .education-blocks__item h2 {
-  width: 80%;
-  font-weight: 400;
-  line-height: 30px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  word-spacing: 0px;
-  text-align: left;
-}
-.education .education-blocks .education-blocks__item p {
-  width: 437px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.1px;
-  word-spacing: 0px;
-}
-.education .education-blocks__item:hover .number {
-  color: #bd8660;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
-}
-.education .education-blocks__item:hover h1 {
-  color: #bd8660;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
 }
 
 .experience {
-  width: 1135px;
-  height: 807px;
-  background-color: #ffffff;
-  margin-left: 215px;
-  position: relative;
+  height: 100vh;
 }
-
-.content4 {
-  height: 807px;
-  width: 950px;
-  margin: 0 auto;
-  position: relative;
-}
-.content4 .heading {
-  position: absolute;
-  width: 160px;
-  height: 51px;
-  color: #333333;
-  font-family: "Exo 2";
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 30px;
-  text-transform: uppercase;
-  margin-top: 95px;
-  margin-left: 2px;
-  letter-spacing: 0.2px;
-  word-spacing: 1.2px;
-}
-.content4 h1 {
-  position: absolute;
-  display: inline-block;
-  margin: 0;
-  margin-top: 2px;
-  margin-left: 61px;
-  width: 265px;
-  height: 26px;
+.experience .experience-blocks {
+  width: 100%;
+  height: calc(100% - 51px - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #4c4c4c;
-  font-family: "Roboto";
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.3px;
-  word-spacing: 0.2px;
-  text-transform: uppercase;
-}
-.content4 h2 {
-  position: absolute;
-  width: 265px;
-  height: 42px;
-  color: #4c4c4c;
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  word-spacing: 0px;
-  margin: 0;
-  margin-top: 41px;
-  margin-left: 61px;
-}
-.content4 p {
-  position: absolute;
-  width: 437px;
-  height: 47px;
-  color: #4c4c4c;
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0px;
-  word-spacing: 0.5px;
-  margin: 0;
-  margin-top: 133px;
-}
-.content4 .exp1:hover #num, .content4 .exp2:hover #num, .content4 .exp3:hover #num, .content4 .exp4:hover #num {
-  color: #3971ff;
-  transition: 1s;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  -moz-transition: 1s;
-}
-.content4 .exp1:hover h1, .content4 .exp2:hover h1, .content4 .exp3:hover h1, .content4 .exp4:hover h1 {
-  color: #3971ff;
-  transition: 1s;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  -moz-transition: 1s;
-}
-.content4 .exp1 {
-  position: absolute;
-  width: 438px;
-  height: 179px;
-  margin-top: 243px;
-  margin-left: 2px;
-}
-.content4 .exp2 {
-  position: absolute;
-  width: 438px;
-  height: 179px;
-  margin-top: 243px;
-  margin-left: 477px;
-}
-.content4 .exp3 {
-  position: absolute;
-  width: 438px;
-  height: 179px;
-  margin-top: 521px;
-  margin-left: 2px;
-}
-.content4 .exp4 {
-  position: absolute;
-  width: 438px;
-  height: 179px;
-  margin-top: 521px;
-  margin-left: 477px;
 }
 
 .portfolio {
